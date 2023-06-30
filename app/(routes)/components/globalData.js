@@ -1,6 +1,3 @@
-import Title from "@/app/(routes)/components/title";
-import DataTable from "../components/dataTable";
-
 const HOSTNAME = 'https://pro-api.coinmarketcap.com'
 const API_KEY = '8a64fa8e-4a97-4783-bfc0-7e84c7a28ebb'
 
@@ -12,21 +9,19 @@ const options = {
     },
 }
 
-async function getTop() {
-    const res = await fetch(`${HOSTNAME}/v1/cryptocurrency/listings/latest?limit=10`, options)
+async function getGlobalData() {
+    const res = fetch(`${HOSTNAME}/v1/global-metrics/quotes/latest`)
     if (!res.ok) {
         throw new Error('Failed to fetch data')
     }
-    return res.json()
+    return (await res).json()
 }
 
-export default async function Interests() {
-    const data = await getTop()
-
+export default async function GlobalData() {
+    const globalData = await getGlobalData()
     return (
         <div>
-            <Title title='Projects I&apos;m looking into' />
-            <DataTable dataa={data.data} />
+            <div>Today&apos;s Cryptocurrency Prices by Market Cap</div>
         </div>
     )
 }
