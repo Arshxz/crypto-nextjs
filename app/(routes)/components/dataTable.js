@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link"
 import TableHeader from "./tableHeader"
 
@@ -10,20 +11,21 @@ const DownSvg = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f
     <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
 </svg>
 
-export default function DataTable({ dataa }) {
+export default function DataTable({ data }) {
+    console.log(data)
 
-    if (dataa) {
-        for (var i = 0; i < dataa.length; i++) {
-            dataa[i].num_market_pairs = Math.round(dataa[i].quote.USD.volume_24h / dataa[i].quote.USD.price).toLocaleString()
-            if (dataa[i].quote.USD.price > 1) {
-                dataa[i].quote.USD.price = dataa[i].quote.USD.price.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    if (data) {
+        for (var i = 0; i < data.length; i++) {
+            data[i].num_market_pairs = Math.round(data[i].quote.USD.volume_24h / data[i].quote.USD.price).toLocaleString()
+            if (data[i].quote.USD.price > 1) {
+                data[i].quote.USD.price = data[i].quote.USD.price.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
             } else {
-                dataa[i].quote.USD.price = dataa[i].quote.USD.price.toFixed(4).toLocaleString()
+                data[i].quote.USD.price = data[i].quote.USD.price.toFixed(4).toLocaleString()
             }
-            dataa[i].quote.USD.percent_change_7d = dataa[i].quote.USD.percent_change_7d.toFixed(2)
-            dataa[i].quote.USD.market_cap = Math.round(dataa[i].quote.USD.market_cap).toLocaleString()
-            dataa[i].quote.USD.volume_24h = Math.round(dataa[i].quote.USD.volume_24h).toLocaleString()
-            dataa[i].circulating_supply = dataa[i].circulating_supply.toLocaleString()
+            data[i].quote.USD.percent_change_7d = data[i].quote.USD.percent_change_7d.toFixed(2)
+            data[i].quote.USD.market_cap = Math.round(data[i].quote.USD.market_cap).toLocaleString()
+            data[i].quote.USD.volume_24h = Math.round(data[i].quote.USD.volume_24h).toLocaleString()
+            data[i].circulating_supply = Math.round(data[i].circulating_supply).toLocaleString()
         }
     }
 
@@ -33,7 +35,7 @@ export default function DataTable({ dataa }) {
             <table>
                 <TableHeader />
                 <tbody>
-                    {dataa?.map((coin, id) => (
+                    {data?.map((coin, id) => (
                         <tr key={id}>
                             <td className="text-start">{id + 1}</td>
                             <td className="text-start flex flex-col justify-center">
@@ -57,6 +59,4 @@ export default function DataTable({ dataa }) {
             </table>
         </div>
     )
-}
-
-// 30216.695767306664	
+} 

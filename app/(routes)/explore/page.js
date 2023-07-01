@@ -1,7 +1,8 @@
 import DataTable from "../components/dataTable"
-import GlobalData from "../components/globalData"
 import Title from "../components/title"
 
+// We can pass headers on a get request using two ways:
+// axios.defaults.headers.get['X-CoinAPI-Key'] = API_KEY;
 const HOSTNAME = 'https://pro-api.coinmarketcap.com'
 const API_KEY = '8a64fa8e-4a97-4783-bfc0-7e84c7a28ebb'
 
@@ -14,7 +15,7 @@ const options = {
     // }
 }
 
-async function getTopTen() {
+async function getExplore() {
     const res = await fetch(`${HOSTNAME}/v1/cryptocurrency/listings/latest?limit=10`, options)
     if (!res.ok) {
         throw new Error('Failed to fetch data')
@@ -23,12 +24,12 @@ async function getTopTen() {
 }
 
 export default async function Explore() {
-    const data = await getTopTen()
+    const explore = await getExplore()
 
     return (
         <div>
             <Title title='Explore the Market' />
-            <DataTable dataa={data.data} />
+            <DataTable data={explore.data} />
         </div>
     )
 }
