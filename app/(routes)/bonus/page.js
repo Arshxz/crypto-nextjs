@@ -41,7 +41,7 @@ export default async function Bonus() {
 
     return (
         <div>
-            <Title title='1000% Projects' />
+            <Title title='100x Projects' />
             <DataTable data={dataArr} />
         </div>
     )

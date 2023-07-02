@@ -1,4 +1,3 @@
-'use client'
 import Link from "next/link"
 import TableHeader from "./tableHeader"
 
@@ -12,7 +11,6 @@ const DownSvg = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f
 </svg>
 
 export default function DataTable({ data }) {
-    console.log(data)
 
     if (data) {
         for (var i = 0; i < data.length; i++) {
@@ -30,13 +28,13 @@ export default function DataTable({ data }) {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center mt-20">
-            <div className="w-11/12 ml-5 text-2xl pb-4 font-thin">Today&apos;s Cryptocurrency Prices by <span className="text-blue-500"><Link href='https://coinmarketcap.com/' target='_blank'>Market Cap</Link></span></div>
-            <table>
+        <div className="flex flex-col items-center justify-center mt-8">
+            <div className="w-11/12 ml-5 text-xs md:text-2xl pb-4 font-normal md:font-thin">Today&apos;s Cryptocurrency Prices by <span className="text-blue-500"><Link href='https://coinmarketcap.com/' target='_blank'>Market Cap</Link></span></div>
+            <table className="min-w-md md:w-11/12 overflow-y-auto">
                 <TableHeader />
                 <tbody>
                     {data?.map((coin, id) => (
-                        <tr key={id}>
+                        <tr key={id} className="hover:bg-slate-50">
                             <td className="text-start">{id + 1}</td>
                             <td className="text-start flex flex-col justify-center">
                                 <span>{coin.name}</span>

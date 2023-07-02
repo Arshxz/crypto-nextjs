@@ -1,9 +1,9 @@
 import { Suspense } from 'react'
 import './styles.scss'
-import { Inter } from 'next/font/google'
 import Loading from './loading'
+import Header from './(routes)/components/header'
 
-const inter = Inter({ subsets: ['latin'] })
+const name = 'Arshdeep Singh'
 
 export const metadata = {
   title: 'Satoshi by Arsh',
@@ -13,8 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='min-h-screen	'>
+      <body className='min-h-screen select-none overflow-x-hidden'>
         <Suspense fallback={<Loading />}>
+          <Header />
           {children}
         </Suspense>
       </body>
