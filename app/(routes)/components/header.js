@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 export default function Header() {
     const pathname = usePathname()
     const navLinks = ['explore', 'portfolio', 'interests', 'bonus']
-    const ab = 'sdf'
+
     return (
         <div className={`${pathname === '/' && 'hidden'} block w-full absolute bg-white/30 text-white sm:max-md:hidden`}>
             <Link
