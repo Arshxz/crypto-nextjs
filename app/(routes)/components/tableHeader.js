@@ -12,7 +12,7 @@ export default function TableHeader() {
     const [supply, setSupply] = useState(false)
 
     return (
-        <thead>
+        <thead className="sticky top-0 bg-white shadow drop-shadow">
             <tr>
                 <th className="text-start">#</th>
                 <th className="text-start">Name</th>

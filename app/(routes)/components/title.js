@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function Title({ title }) {
@@ -24,11 +25,17 @@ export default function Title({ title }) {
     })
 
     return (
-        <div className='text-center pt-36'>
-            <div className='text-6xl font-light tracking-wide'>Satoshi</div>
-            <div key={count} className='hero opacity-0 text-sm text-slate-400 w-4/6 mx-auto h-20'>{facts[count]}</div>
+        <div className='lg:pt-32 md:pt-20 pt-2 w-4/5 mx-auto'>
+            <div className='flex w-full justify-between'>
+                <div className='w-40 hidden md:block'>Powered by <span className="text-blue-500"><Link href='https://coinmarketcap.com/' target='_blank'>CoinMarketCap</Link></span></div>
+                <div className='text-center pt-16 w-full'>
+                    <div className='text-6xl font-light tracking-wide w-full text-center'>Satoshi</div>
+                    <div key={count} className='hero opacity-0 text-sm text-slate-400 md:w-4/6 lg:w-7/12 mx-auto h-20 text-center'>{facts[count]}</div>
+                </div>
+                <div className='w-40 text-right hidden md:block'>A Project by <span className="text-blue-500"><Link href='https://github.com/Arshxz' target='_blank'>Arsh</Link></span></div>
+            </div>
             {title && (
-                <div className={`flex justify-center mt-8 font-thin text-5xl uppercase`}>{title}</div>
+                <div className='text-center mt-8 md:mt-12 font-semibold md:font-bold text-2xl md:text-4xl uppercase text-slate-700'>{title}</div>
             )}
         </div>
     )

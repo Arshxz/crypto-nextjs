@@ -7,7 +7,7 @@ const arrowRight = <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18
 
 export function Container({ url, title, hero }) {
   return (
-    <Link href={url} className="group home-action">
+    <Link href={url} className="group home-action my-4 lg:mx-4">
       <div className='flex items-center text-xl	font-semibold pb-1'>
         <div>{title}</div>
         <div className="ml-2 pt-1 group-hover:translate-x-1 motion-safe:transition">{arrowRight}</div>
@@ -19,13 +19,9 @@ export function Container({ url, title, hero }) {
 
 export default async function Page() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between py-10'>
-      <div className='flex justify-between w-5/6 lg:mt-14'>
-        <div className='w-40'>Powered by <span className="text-blue-500"><Link href='https://coinmarketcap.com/' target='_blank'>CoinMarketCap</Link></span></div>
-        <Title />
-        <div className='w-40 text-right'>A Project by <span className="text-blue-500"><Link href='https://github.com/Arshxz' target='_blank'>Arsh</Link></span></div>
-      </div>
-      <div className="lg:flex">
+    <main>
+      <Title />
+      <div className="w-3/5 mx-auto md:w-5/12 lg:flex lg:w-4/5 lg:mt-5 lg:pt-36">
         <Container url='explore' title='Explore' hero='Explore the crypto space' />
         <Container url='portfolio' title='Portfolio' hero='Wanna know what projects I am currently invested in?' />
         <Container url='interests' title='Interests' hero='Have a quick look at the projects I&apos;m interested in' />
