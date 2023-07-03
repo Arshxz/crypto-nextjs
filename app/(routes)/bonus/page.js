@@ -40,7 +40,7 @@ export default async function Bonus() {
     let dataArr = Object.values(bonus.data)
 
     return (
-        <div className="linear">
+        <div className="bg-black">
             <Title title='100x Projects' />
             <DataTable data={dataArr} />
         </div>
