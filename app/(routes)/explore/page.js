@@ -27,7 +27,7 @@ export default async function Explore() {
     const explore = await getExplore()
 
     return (
-        <div>
+        <div className="linear">
             <Title title='Explore the Market' />
             <DataTable data={explore.data} />
         </div>
