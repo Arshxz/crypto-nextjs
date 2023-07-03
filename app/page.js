@@ -19,7 +19,7 @@ export function Container({ url, title, hero }) {
 
 export default async function Page() {
   return (
-    <main>
+    <main className="linear">
       <Title />
       <div className="w-3/5 mx-auto md:w-5/12 lg:flex lg:w-4/5 lg:mt-5 lg:pt-36">
         <Container url='explore' title='Explore' hero='Explore the crypto space' />

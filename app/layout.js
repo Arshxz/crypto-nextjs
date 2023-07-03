@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='min-h-screen select-none overflow-x-hidden bg-gradient-to-b from-slate-300 to-white'>
+      <body className='min-h-screen select-none overflow-x-hidden'>
         <Suspense fallback={<Loading />}>
           <Header />
           {children}
