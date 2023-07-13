@@ -30,7 +30,7 @@ export default async function Explore() {
     const explore = await getExplore()
 
     return (
-        <div>
+        <div className="linear">
             <Title title='Explore the Market' />
             {/* <Suspense fallback={<Skeleton />}>
                 <GetData />
