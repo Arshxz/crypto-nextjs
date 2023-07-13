@@ -12,14 +12,15 @@ export default function TableHeader() {
     const [supply, setSupply] = useState(false)
 
     return (
-        <thead className="sticky top-0 bg-white shadow drop-shadow">
+        <thead className=" bg-white">
             <tr>
-                <th className="text-start">#</th>
+                <th className='text-start'>#</th>
                 <th className="text-start">Name</th>
                 <th>Price</th>
-                <th>7d%</th>
-                <th>
-                    <div className="flex justify-end items-center">
+                <th className="max-md:hidden">7d%</th>
+                <th className="md:hidden">24h%</th>
+                <th className='max-md:hidden'>
+                    <div className='flex justify-end items-center'>
                         Market Cap
                         <span className="relative ml-1"
                             onMouseEnter={() => setMcap(true)}
@@ -31,10 +32,10 @@ export default function TableHeader() {
                         The total market value of a cryptocurrency&apos;s circulating supply. It is analogous to the free-float capitalization in the stock market. <br /><br />Market Cap = Current Price x Circulating Supply.
                     </div>
                 </th>
-                <th className="relative">
+                <th className='max-md:hidden'>
                     <div className="flex justify-end items-center">
                         Volume(24h)
-                        <span className="ml-1"
+                        <span className="ml-1 hidden md:block"
                             onMouseEnter={() => setVolume(true)}
                             onMouseLeave={() => setVolume(false)}>
                             {InfoSvg}
@@ -44,7 +45,7 @@ export default function TableHeader() {
                         <div className="tooltip">A measure of how much of a cryptocurrency was traded in the last 24 hours.</div>
                     )}
                 </th>
-                <th className="relative">
+                <th className='max-md:hidden'>
                     <div className="flex justify-end items-center">
                         Circulating Supply
                         <span className="ml-1"

@@ -5,6 +5,7 @@
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 3px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -56,7 +57,6 @@ $breakpoint-tab: 768px;
   .home-action {
     width: 22%;
     margin: auto;
-    margin-bottom: 8vh;
     transition-duration: 0.2s;
   }
 }
@@ -65,9 +65,18 @@ $breakpoint-tab: 768px;
     width: 45vw;
   }
 }
+.modalOn body {
+  height: 100vh;
+  overflow-y: hidden !important;
+  position: fixed !important;
+  top: 0;
+}
+.hero .modalOn {
+  animation: none;
+  animation-duration: 0ms;
+}
 .hero {
   animation: fadein;
-  // animation-delay: 1000ms;
   animation-duration: 6000ms;
 }
 @keyframes fadein {
@@ -136,5 +145,58 @@ table {
   line-height: 1.5em;
   border-radius: 10px;
   font-weight: 500;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr 1fr 1fr;
+  grid-template-rows: 40px;
+  gap: 10px;
+  animation: fadeTable infinite;
+  animation-duration: 1000ms;
+}
+@keyframes fadeTable {
+  0% {
+    opacity: 40%;
+  }
+  50% {
+    opacity: 800%;
+  }
+  100% {
+    opacity: 40%;
+  }
+}
+
+.skeleton {
+  background: #e1e1e1;
+  border-radius: 4px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 0;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #e8e8e8 50%,
+    transparent 100%
+  );
+  animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes load {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
 }

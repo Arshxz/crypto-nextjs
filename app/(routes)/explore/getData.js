@@ -1,7 +1,3 @@
-import { Suspense } from "react"
-import Title from "../components/title"
-import GetData from "./getData"
-import Skeleton from "./skeleton"
 import DataTable from "../components/dataTable"
 
 // We can pass headers on a get request using two ways:
@@ -26,16 +22,10 @@ async function getExplore() {
     return res.json()
 }
 
-export default async function Explore() {
+export default async function GetData() {
     const explore = await getExplore()
 
     return (
-        <div>
-            <Title title='Explore the Market' />
-            {/* <Suspense fallback={<Skeleton />}>
-                <GetData />
-            </Suspense> */}
-            <DataTable data={explore.data} />
-        </div>
+        <DataTable data={explore.data} />
     )
 }
