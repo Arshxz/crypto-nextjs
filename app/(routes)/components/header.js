@@ -8,6 +8,7 @@ export default function Header() {
     const pathname = usePathname()
     const navLinks = ['explore', 'portfolio', 'interests', 'bonus']
     const [modal, setModal] = useState(false)
+    // error
 
     return (
         <div className={`${pathname === '/' && 'hidden'} ${modal === true ? 'fixed modalOn' : 'absolute'} w-full bg-white/30 text-white z-99`}>
