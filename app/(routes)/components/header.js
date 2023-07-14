@@ -2,26 +2,54 @@
 
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
+import { useState } from "react";
 
 export default function Header() {
     const pathname = usePathname()
     const navLinks = ['explore', 'portfolio', 'interests', 'bonus']
+    const [modal, setModal] = useState(false)
 
     return (
-        <div className={`${pathname === '/' && 'hidden'} block w-full absolute bg-white/30 text-white sm:max-md:hidden`}>
+        <div className={`${pathname === '/' && 'hidden'} ${modal === true ? 'fixed modalOn' : 'absolute'} w-full bg-white/30 text-white z-99`}>
             <Link
                 href='/'
-                className="bg-black/90 hover:bg-black/60 text-sm leading-6 absolute my-4 ml-16 px-4 py-1 rounded-md tracking-widest"
+                className='bg-black/90 hover:bg-black/60 text-sm leading-6 absolute my-4 ml-4 md:ml-16 px-4 py-1 rounded-md tracking-widest z-10'
             >
                 Satoshi
             </Link>
-            <div className="min-w-fit w-5/12 mx-auto flex justify-between my-4 md:max-md:fixed md:max-md:right-0">
+            <div className="bg-black/90 text-sm leading-6 absolute right-4 my-4 md:hidden px-4 py-1 rounded-md tracking-widest z-10"
+                onClick={() => setModal(!modal)}
+            >
+                Menu
+            </div>
+            {modal && (
+                <div className="w-full bg-white text-blue-900 h-full z-9 flex flex-col justify-center items-center"
+                    onClick={() => setModal(false)}
+                >
+                    {navLinks.map((link) => {
+                        const isActive = pathname.startsWith(`/${link}`)
+
+                        return (
+                            <Link
+                                className={`capitalize my-4 px-7 py-2 rounded-md 
+                                        ${isActive ? 'bg-blue-500/60 cursor-default' : 'bg-black/80 text-white'}`}
+                                href={link}
+                                key={link}
+                                onClick={() => setModal(false)}
+                            >
+                                {link}
+                            </Link>
+                        )
+                    })}
+                </div>
+            )}
+            <div className="flex my-4 md:justify-end lg:justify-center max-md:hidden">
                 {navLinks.map((link) => {
                     const isActive = pathname.startsWith(`/${link}`)
 
                     return (
                         <Link
-                            className={`capitalize px-5 py-1 rounded-md
+                            className={`capitalize mx-4 px-5 py-1 rounded-md
                             ${isActive ? 'bg-blue-500/40 cursor-default' : 'bg-white/40 text-black hover:bg-white/60'}`}
                             href={link}
                             key={link}

@@ -20,6 +20,7 @@ export default function DataTable({ data }) {
             } else {
                 data[i].quote.USD.price = data[i].quote.USD.price.toFixed(4).toLocaleString()
             }
+            data[i].quote.USD.percent_change_24h = data[i].quote.USD.percent_change_24h.toFixed(2)
             data[i].quote.USD.percent_change_7d = data[i].quote.USD.percent_change_7d.toFixed(2)
             data[i].quote.USD.market_cap = Math.round(data[i].quote.USD.market_cap).toLocaleString()
             data[i].quote.USD.volume_24h = Math.round(data[i].quote.USD.volume_24h).toLocaleString()
@@ -28,9 +29,8 @@ export default function DataTable({ data }) {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center mt-8">
-            <div className="w-11/12 ml-5 text-xs md:text-2xl pb-4 font-normal md:font-thin">Today&apos;s Cryptocurrency Prices by <span className="text-blue-500"><Link href='https://coinmarketcap.com/' target='_blank'>Market Cap</Link></span></div>
-            <table className="min-w-md md:w-11/12 overflow-y-auto">
+        <div className="flex flex-col md:items-center justify-center w-6/6 md:mt-1 overflow-x-scroll">
+            <table className="md:w-11/12 overflow-x-auto rounded-sm">
                 <TableHeader />
                 <tbody>
                     {data?.map((coin, id) => (
@@ -41,16 +41,20 @@ export default function DataTable({ data }) {
                                 <span className="text-xs text-slate-500">{coin.symbol}</span>
                             </td>
                             <td>${coin.quote.USD.price}</td>
-                            <td className={coin.quote.USD.percent_change_7d > 0 ? 'text-green-500' : 'text-red-500'}>
+                            <td className={coin.quote.USD.percent_change_7d > 0 ? 'text-green-500 max-md:hidden' : 'text-red-500 max-md:hidden'}>
                                 {coin.quote.USD.percent_change_7d > 0 ? UpSvg : DownSvg}
                                 {coin.quote.USD.percent_change_7d}%
                             </td>
-                            <td>${coin.quote.USD.market_cap}</td>
-                            <td className="flex flex-col justify-center">
+                            <td className={coin.quote.USD.percent_change_24h > 0 ? 'text-green-500 md:hidden' : 'text-red-500 hidden md:hidden'}>
+                                {coin.quote.USD.percent_change_24h > 0 ? UpSvg : DownSvg}
+                                {coin.quote.USD.percent_change_24h}%
+                            </td>
+                            <td className="max-md:hidden">${coin.quote.USD.market_cap}</td>
+                            <td className="max-md:hidden flex-col justify-center flex">
                                 <span>${coin.quote.USD.volume_24h}</span>
                                 <span className="text-xs text-slate-500">{coin.num_market_pairs} {coin.symbol}</span>
                             </td>
-                            <td>{coin.circulating_supply} {coin.symbol}</td>
+                            <td className="max-md:hidden">{coin.circulating_supply} {coin.symbol}</td>
                         </tr>
                     ))}
                 </tbody>
