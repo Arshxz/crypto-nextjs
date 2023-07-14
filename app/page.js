@@ -7,7 +7,7 @@ const arrowRight = <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18
 
 export function Container({ url, title, hero }) {
   return (
-    <Link href={url} className="group home-action mt-8 lg:mx-4">
+    <Link href={url} className="group home-action my-8 lg:mx-4">
       <div className='flex items-center text-xl	font-semibold pb-1'>
         <div>{title}</div>
         <div className="ml-2 pt-1 group-hover:translate-x-1 motion-safe:transition">{arrowRight}</div>
@@ -19,7 +19,7 @@ export function Container({ url, title, hero }) {
 
 export default async function Page() {
   return (
-    <div className="h-fit lg:h-screen max-md:mb-5">
+    <div className="min-h-screen">
       <Title />
       <div className="w-3/5 mx-auto md:w-5/12 lg:flex lg:w-4/5 lg:pt-36">
         <Container url='explore' title='Explore' hero='Explore the crypto space' />
