@@ -19,7 +19,7 @@ export function Container({ url, title, hero }) {
 
 export default async function Page() {
   return (
-    <main className="h-fit lg:h-screen max-md:mb-5">
+    <div className="h-fit lg:h-screen max-md:mb-5">
       <Title />
       <div className="w-3/5 mx-auto md:w-5/12 lg:flex lg:w-4/5 lg:pt-36">
         <Container url='explore' title='Explore' hero='Explore the crypto space' />
@@ -27,6 +27,6 @@ export default async function Page() {
         <Container url='interests' title='Interests' hero='Have a quick look at the projects I&apos;m interested in' />
         <Container url='bonus' title='100x' hero='Projects I believe could give you a 1000% return' />
       </div>
-    </main >
+    </div >
   )
 }
