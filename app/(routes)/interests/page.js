@@ -22,7 +22,7 @@ export default async function Interests() {
     const interests = await getInterests()
 
     return (
-        <div className="linear">
+        <div>
             <Title title='Projects I&apos;m looking into' />
             <DataTable data={interests.data} />
         </div>

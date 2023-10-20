@@ -31,8 +31,8 @@ export default function Header() {
 
                         return (
                             <Link
-                                className={`capitalize my-4 px-7 py-2 rounded-md 
-                                        ${isActive ? 'bg-blue-500/60 cursor-default' : 'bg-black/80 text-white'}`}
+                                className={`capitalize my-4 px-7 py-2 rounded-md text-white
+                                        ${isActive ? 'bg-blue-500 cursor-default' : 'bg-black/80'}`}
                                 href={link}
                                 key={link}
                                 onClick={() => setModal(false)}
@@ -50,7 +50,7 @@ export default function Header() {
                     return (
                         <Link
                             className={`capitalize mx-4 px-5 py-1 rounded-md
-                            ${isActive ? 'bg-blue-500/40 cursor-default' : 'bg-white/40 text-black hover:bg-white/60'}`}
+                            ${isActive ? 'bg-blue-500 cursor-default' : 'bg-white/40 text-black hover:bg-white/60'}`}
                             href={link}
                             key={link}
                         >

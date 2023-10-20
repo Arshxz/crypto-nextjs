@@ -4,6 +4,8 @@ import GetData from "./getData"
 import Skeleton from "./skeleton"
 import DataTable from "../components/dataTable"
 
+import { Animation } from "@/app/context/store"
+
 // We can pass headers on a get request using two ways:
 // axios.defaults.headers.get['X-CoinAPI-Key'] = API_KEY;
 const HOSTNAME = 'https://pro-api.coinmarketcap.com'
@@ -27,10 +29,13 @@ async function getExplore() {
 }
 
 export default async function Explore() {
+    // const { state, setState } = Animation()
+    // console.log(state)
+
     const explore = await getExplore()
 
     return (
-        <div className="linear">
+        <div>
             <Title title='Explore the Market' />
             {/* <Suspense fallback={<Skeleton />}>
                 <GetData />

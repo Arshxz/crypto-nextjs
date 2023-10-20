@@ -17,28 +17,16 @@
   background: #555;
 }
 
-// :root {
-//   --foreground-rgb: 0, 0, 0;
-//   --background-start-rgb: 214, 219, 220;
-//   --background-end-rgb: 255, 255, 255;
-// }
-
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     --foreground-rgb: 255, 255, 255;
-//     --background-start-rgb: 0, 0, 0;
-//     --background-end-rgb: 0, 0, 0;
-//   }
-// }
-
-.linear {
-  color: #000000;
-  background: linear-gradient(#d6dbdc, #ffffff) !important;
-  background-image: linear-gradient(rgb(214, 219, 220), #ffffff) !important;
+.global {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  background: linear-gradient(#d6dbdc, #ffffff);
+  background-image: linear-gradient(rgb(214, 219, 220), #ffffff);
 }
+
 .home-action {
   background-color: rgba(224, 224, 224, 0.5);
-  // width: 60vw;
   height: 15vh;
   border-radius: 12px;
   padding: 15px 15px;
@@ -47,6 +35,7 @@
     background-color: rgba(224, 224, 224, 0.8);
   }
 }
+
 $breakpoint-laptop: 1024px;
 $breakpoint-tab: 768px;
 @media (min-width: $breakpoint-laptop) {

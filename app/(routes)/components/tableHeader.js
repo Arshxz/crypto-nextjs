@@ -22,7 +22,7 @@ export default function TableHeader() {
                 <th className='max-md:hidden'>
                     <div className='flex justify-end items-center'>
                         Market Cap
-                        <span className="relative ml-1"
+                        <span className="relative ml-1 -z-10"
                             onMouseEnter={() => setMcap(true)}
                             onMouseLeave={() => setMcap(false)}>
                             {InfoSvg}

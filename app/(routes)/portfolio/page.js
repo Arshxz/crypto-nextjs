@@ -66,7 +66,7 @@ export default async function Portfolio() {
     let dataArr = Object.values(portfolio.data)
 
     return (
-        <div className="linear">
+        <div>
             <Title title='My Portfolio' />
             <DataTable data={dataArr} />
         </div>
