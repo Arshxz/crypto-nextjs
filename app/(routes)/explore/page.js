@@ -1,7 +1,5 @@
-import { Suspense } from "react"
 import Title from "../components/title"
 import GetData from "./getData"
-import Skeleton from "./skeleton"
 import DataTable from "../components/dataTable"
 
 import { Animation } from "@/app/context/store"
@@ -29,17 +27,11 @@ async function getExplore() {
 }
 
 export default async function Explore() {
-    // const { state, setState } = Animation()
-    // console.log(state)
-
     const explore = await getExplore()
 
     return (
         <div>
             <Title title='Explore the Market' />
-            {/* <Suspense fallback={<Skeleton />}>
-                <GetData />
-            </Suspense> */}
             <DataTable data={explore.data} />
         </div>
     )

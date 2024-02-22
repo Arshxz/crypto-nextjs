@@ -9,9 +9,9 @@ const options = {
     headers: {
         'X-CMC_PRO_API_KEY': API_KEY
     },
-    // next: {
-    //     'revalidate': 86400
-    // }
+    next: {
+        'revalidate': 86400
+    }
 }
 
 async function getExplore() {
