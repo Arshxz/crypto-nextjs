@@ -6,12 +6,8 @@ import { useState } from "react";
 
 export default function SignupPage() {
     const router = useRouter()
-    const [user, setUser] = useState({
-        email: "Arsh@gmail.com",
-        password: "Abcdefghijk"
-    })
+    const [user, setUser] = useState({})
 
-    console.log(user)
 
     const SignUpHandler = async () => {
         try {

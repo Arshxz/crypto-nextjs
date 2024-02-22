@@ -3,6 +3,7 @@ import bcryptjs from "bcryptjs"
 
 import dbConnect from "@/app/server/dbconfig";
 import User from "@/app/server/models/User";
+export const runtime = 'edge';
 
 // Calls the connect function to establish a connection to the database.
 dbConnect()
