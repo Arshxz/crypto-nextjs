@@ -6,9 +6,6 @@ const arrowRight = <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18
 </svg>
 
 export function Container({ url, title, hero }) {
-  console.log(process.env.MONGODB_URI)
-  console.log("abcdshj")
-
   return (
     <Link href={url} className="group home-action my-8 lg:mx-4">
       <div className='flex items-center text-xl	font-semibold pb-1'>
