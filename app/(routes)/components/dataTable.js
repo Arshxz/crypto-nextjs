@@ -45,7 +45,7 @@ export default function DataTable({ data }) {
                                 {coin.quote.USD.percent_change_7d > 0 ? UpSvg : DownSvg}
                                 {coin.quote.USD.percent_change_7d}%
                             </td>
-                            <td className={coin.quote.USD.percent_change_24h > 0 ? 'text-green-500 md:hidden' : 'text-red-500 hidden md:hidden'}>
+                            <td className={coin.quote.USD.percent_change_24h > 0 ? 'text-green-500 md:hidden' : 'text-red-500 md:hidden'}>
                                 {coin.quote.USD.percent_change_24h > 0 ? UpSvg : DownSvg}
                                 {coin.quote.USD.percent_change_24h}%
                             </td>
