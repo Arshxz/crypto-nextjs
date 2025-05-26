@@ -5,7 +5,8 @@ A modern and responsive cryptocurrency dashboard that displays real-time market 
 ![Lighthouse Performance](https://img.shields.io/badge/Performance-98%2B-brightgreen?logo=lighthouse&style=flat-square)
 ![Next.js](https://img.shields.io/badge/Next.js-13-blue?logo=next.js&style=flat-square)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-Enabled-38B2AC?logo=tailwind-css&style=flat-square)
-![JavaScript](https://img.shields.io/badge/JavaScript-Enabled-F7DF1E?logo=javascript&logoColor=000&style=flat-square)![MIT License](https://img.shields.io/github/license/Arshxz/crypto-nextjs?style=flat-square)
+![JavaScript](https://img.shields.io/badge/JavaScript-Enabled-F7DF1E?logo=javascript&logoColor=000&style=flat-square)
+![MIT License](https://img.shields.io/github/license/Arshxz/crypto-nextjs?style=flat-square)
 
 ---
 
