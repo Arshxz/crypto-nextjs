@@ -32,7 +32,7 @@ A modern and responsive cryptocurrency dashboard that displays real-time market 
 
 - **Framework**: [Next.js 13 (App Router)](https://nextjs.org/docs/app)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Language**: [JavaScript]((https://developer.mozilla.org/en-US/docs/Web/JavaScript))
 - **Data API**: [CoinGecko API](https://www.coingecko.com/en/api)
 - **Fonts**: `next/font` for performance-optimized web fonts
 - **Deployment**: [Vercel](https://vercel.com/)
