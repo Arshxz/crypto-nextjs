@@ -48,37 +48,44 @@ A modern and responsive cryptocurrency dashboard that displays real-time market 
 env
 `NEXT_PUBLIC_API_BASE_URL=https://api.coingecko.com/api/v3`
 
-2.	Access it in the project like this:
+2. Access it in the project like this:
 
 `const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;`
+
+
 🔁 Don’t forget to restart the dev server after making changes to .env.local.
 
-📦 Installation
+**📦 Installation**
 
-✅ Prerequisites
+**✅ Prerequisites**
 	•	Node.js (v18 or later)
 	•	npm or yarn
 
-🔧 Setup Instructions
-# Clone the repository
+ ---
+
+## 🔧 Setup Instructions
+**Clone the repository**
 `git clone https://github.com/Arshxz/crypto-nextjs.git`
 
-# Navigate to the project directory
+**Navigate to the project directory**
 `cd crypto-nextjs`
 
-# Install dependencies
+**Install dependencies**
 `npm install`
 
-# Set up environment variables
+**Set up environment variables**
 `cp .env.example .env.local  # or create .env.local manually`
 
-# Start the development server
+**Start the development server**
 `npm run dev`
 
-# Open in your browser
+**Open in your browser**
 `http://localhost:3000`
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
+```
 crypto-nextjs/
 ├── app/                    # Pages and routing using App Router
 │   └── page.tsx           # Home page component
@@ -89,21 +96,26 @@ crypto-nextjs/
 ├── .env.local             # Environment config (not committed)
 ├── tailwind.config.ts     # Tailwind configuration
 └── tsconfig.json          # TypeScript config
+```
 
-🤝 Contributing
+---
 
+## 🤝 Contributing
 Contributions are welcome! If you’d like to suggest improvements, report bugs, or submit a pull request, please follow these steps:
-	1.	Fork the repository
-	2.	Create a new branch: git checkout -b feature/your-feature-name
-	3.	Commit your changes: git commit -m 'Add some feature'
-	4.	Push to the branch: git push origin feature/your-feature-name
-	5.	Open a Pull Request
+1. Fork the repository
+2. Create a new branch: git checkout -b feature/your-feature-name
+3. Commit your changes: git commit -m 'Add some feature'
+4. Push to the branch: git push origin feature/your-feature-name
+5. Open a Pull Request
 
+---
 
-🙋‍♂️ Author
+## 🙋‍♂️ Author
 
-Arshdeep Singh
-📍 GitHub
-🌐 Portfolio
+**Arshdeep Singh**
 
-Made with ❤️ using Next.js & Tailwind CSS
+📍 [GitHub](https://github.com/Arshxz)
+
+🌐 [Portfolio](http://github.com/arshxz/)
+
+`Made with ❤️ using Next.js & Tailwind CSS`
