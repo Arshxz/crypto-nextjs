@@ -45,7 +45,7 @@ A modern and responsive cryptocurrency dashboard that displays real-time market 
 
 1. Create a `.env.local` file in the root directory:
 
-```env
+env
 `NEXT_PUBLIC_API_BASE_URL=https://api.coingecko.com/api/v3`
 
 2.	Access it in the project like this:
