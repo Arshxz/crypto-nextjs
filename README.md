@@ -5,8 +5,7 @@ A modern and responsive cryptocurrency dashboard that displays real-time market 
 ![Lighthouse Performance](https://img.shields.io/badge/Performance-98%2B-brightgreen?logo=lighthouse&style=flat-square)
 ![Next.js](https://img.shields.io/badge/Next.js-13-blue?logo=next.js&style=flat-square)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-Enabled-38B2AC?logo=tailwind-css&style=flat-square)
-![TypeScript](https://img.shields.io/badge/TypeScript-Strong-blue?logo=typescript&style=flat-square)
-![MIT License](https://img.shields.io/github/license/Arshxz/crypto-nextjs?style=flat-square)
+![JavaScript](https://img.shields.io/badge/JavaScript-Enabled-F7DF1E?logo=javascript&logoColor=000&style=flat-square)![MIT License](https://img.shields.io/github/license/Arshxz/crypto-nextjs?style=flat-square)
 
 ---
 
@@ -32,7 +31,7 @@ A modern and responsive cryptocurrency dashboard that displays real-time market 
 
 - **Framework**: [Next.js 13 (App Router)](https://nextjs.org/docs/app)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Language**: [JavaScript]((https://developer.mozilla.org/en-US/docs/Web/JavaScript))
+- **Language**: [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - **Data API**: [CoinGecko API](https://www.coingecko.com/en/api)
 - **Fonts**: `next/font` for performance-optimized web fonts
 - **Deployment**: [Vercel](https://vercel.com/)
