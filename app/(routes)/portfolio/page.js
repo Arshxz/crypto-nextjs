@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import Title from "@/app/(routes)/components/title";
 import DataTable from "../components/dataTable";
 

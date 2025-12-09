@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import Title from "../components/title";
 import GetData from "./getData";
 import DataTable from "../components/dataTable";
