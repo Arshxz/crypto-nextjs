@@ -1,9 +1,9 @@
+export const runtime = "edge";
 import Title from "../components/title";
 import DataTable from "../components/dataTable";
 
 // We can pass headers on a get request using two ways:
 // axios.defaults.headers.get['X-CoinAPI-Key'] = API_KEY;
-export const runtime = "edge";
 const HOSTNAME = "https://pro-api.coinmarketcap.com";
 const API_KEY = "8a64fa8e-4a97-4783-bfc0-7e84c7a28ebb";
 

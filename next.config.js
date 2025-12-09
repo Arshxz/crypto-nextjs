@@ -2,6 +2,7 @@
 const nextConfig = {
   experimental: {
     serverActions: true,
+    // turbopack: false,
   },
   // and the following to enable top-level await support for Webpack
   // webpack: (config) => {
@@ -15,4 +16,4 @@ const nextConfig = {
   // }
 };
 
-module.exports = nextConfig;
+export default nextConfig;
