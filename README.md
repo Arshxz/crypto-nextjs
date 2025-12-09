@@ -12,7 +12,7 @@ A modern and responsive cryptocurrency dashboard that displays real-time market 
 
 ## 🚀 Live Demo
 
-👉 [https://Arsh.studio](https://Arsh.studio)
+👉 [https://Arsh.studio](https://satoshi-5x4.pages.dev/explore)
 
 ---
 
@@ -52,18 +52,18 @@ env
 
 `const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;`
 
-
 🔁 Don’t forget to restart the dev server after making changes to .env.local.
 
 **📦 Installation**
 
 **✅ Prerequisites**
-	•	Node.js (v18 or later)
-	•	npm or yarn
+• Node.js (v18 or later)
+• npm or yarn
 
- ---
+---
 
 ## 🔧 Setup Instructions
+
 **Clone the repository**
 `git clone https://github.com/Arshxz/crypto-nextjs.git`
 
@@ -85,6 +85,7 @@ env
 ---
 
 ## 📂 Project Structure
+
 ```
 crypto-nextjs/
 ├── app/                    # Pages and routing using App Router
@@ -101,7 +102,9 @@ crypto-nextjs/
 ---
 
 ## 🤝 Contributing
+
 Contributions are welcome! If you’d like to suggest improvements, report bugs, or submit a pull request, please follow these steps:
+
 1. Fork the repository
 2. Create a new branch: git checkout -b feature/your-feature-name
 3. Commit your changes: git commit -m 'Add some feature'
