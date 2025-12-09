@@ -1,5 +1,6 @@
 import Title from "@/app/(routes)/components/title";
 import DataTable from "../components/dataTable";
+export const runtime = "edge";
 
 const HOSTNAME = "https://pro-api.coinmarketcap.com";
 const API_KEY = "8a64fa8e-4a97-4783-bfc0-7e84c7a28ebb";
