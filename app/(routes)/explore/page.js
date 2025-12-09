@@ -1,8 +1,5 @@
 import Title from "../components/title";
-import GetData from "./getData";
 import DataTable from "../components/dataTable";
-
-import { Animation } from "@/app/context/store";
 
 // We can pass headers on a get request using two ways:
 // axios.defaults.headers.get['X-CoinAPI-Key'] = API_KEY;
