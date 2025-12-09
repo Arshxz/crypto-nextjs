@@ -12,7 +12,7 @@ A modern and responsive cryptocurrency dashboard that displays real-time market 
 
 ## 🚀 Live Demo
 
-👉 [https://Arsh.studio](https://satoshi-5x4.pages.dev/explore)
+👉[https://Arsh.studio](https://satoshi-5x4.pages.dev/explore)
 
 ---
 
