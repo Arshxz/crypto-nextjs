@@ -52,7 +52,7 @@ export default function Title({ title }) {
           <div className="w-fit bg-gray-400/10 px-5 py-2 text-center border-2 rounded-lg shadow-sm border-white/60 peer">
             A Project by <span className="text-blue-500">Arsh</span>
           </div>
-          <div className="w-60 hidden peer-hover:grid hover:grid text-center absolute right-0">
+          <div className="w-60 hidden peer-hover:grid hover:grid text-center absolute right-0 transition-opacity duration-200">
             <div className="[&>*]:bg-white/40 [&>*]:py-1 [&>*]:rounded-lg bg-black/5 opacity-70 mt-2 grid grid-rows-4 gap-2 border-2 rounded-lg shadow-md p-4">
               <Link
                 href="/staticFiles/SoftwareDeveloper.pdf"
