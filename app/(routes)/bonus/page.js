@@ -1,53 +1,32 @@
-export const runtime = "edge";
+"use client";
 import Title from "@/app/(routes)/components/title";
 import DataTable from "../components/dataTable";
+import { useState, useEffect } from "react";
 
-const HOSTNAME = "https://pro-api.coinmarketcap.com";
-const API_KEY = process.env.CMC_API_KEY;
+export default function Bonus() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-const options = {
-  headers: {
-    "X-CMC_PRO_API_KEY": API_KEY,
-  },
-  cache: "no-store",
-};
-
-async function getBonus() {
-  const BONUS = [
-    {
-      GFI: 13967,
-      ENZYME: 1552,
-      PENDLE: 9481,
-      DOPEX: 11188,
-      SPHERE: 18945,
-      PREMIA: 8476,
-      INDEX: 7336,
-      "AKASH NETWORK": 7431,
-      REDACTED: 21324,
-      FOREX: 11794,
-    },
-  ];
-  let list = [];
-  BONUS.map((item) => list.push(Object.values(item)));
-  const string = list.toString();
-  const res = await fetch(
-    `${HOSTNAME}/v2/cryptocurrency/quotes/latest?id=${string}`,
-    options
-  );
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
-
-export default async function Bonus() {
-  const bonus = await getBonus();
-  let dataArr = Object.values(bonus.data);
+  useEffect(() => {
+    fetch("/api/bonus")
+      .then((res) => res.json())
+      .then((json) => {
+        // Convert data object to array
+        const dataArr = json.data ? Object.values(json.data) : [];
+        setData(dataArr);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching bonus data:", err);
+        setData([]);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div>
       <Title title="100x Projects" />
-      <DataTable data={dataArr} />
+      <DataTable data={data} loading={loading} />
     </div>
   );
 }
