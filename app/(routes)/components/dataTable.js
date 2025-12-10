@@ -105,49 +105,47 @@ export default function DataTable({ data, loading = false }) {
       };
     }) || [];
 
-  if (!data || data.length === 0) {
-    return (
-      <div className="text-center py-8 text-gray-500">No data available</div>
-    );
-  }
   // Loading skeleton component
   if (loading || !data || data.length === 0) {
     return (
-      <tbody>
-        {[...Array(8)].map((_, index) => (
-          <tr key={index} className="animate-pulse border-b">
-            <td className="px-4 py-2">
-              <div className="h-4 w-6 bg-gray-200 rounded"></div>
-            </td>
-            <td className="px-4 py-2">
-              <div className="h-4 w-24 bg-gray-200 rounded"></div>
-            </td>
-            <td className="px-4 py-2">
-              <div className="h-4 w-20 bg-gray-200 rounded"></div>
-            </td>
-            {/* 24h% on mobile */}
-            <td className="px-4 py-2 md:hidden">
-              <div className="h-4 w-12 bg-gray-200 rounded"></div>
-            </td>
-            {/* 7d% on desktop */}
-            <td className="px-4 py-2 max-md:hidden">
-              <div className="h-4 w-12 bg-gray-200 rounded"></div>
-            </td>
-            {/* Market Cap */}
-            <td className="px-4 py-2 max-md:hidden">
-              <div className="h-4 w-28 bg-gray-200 rounded"></div>
-            </td>
-            {/* Volume */}
-            <td className="px-4 py-2 max-md:hidden">
-              <div className="h-4 w-24 bg-gray-200 rounded"></div>
-            </td>
-            {/* Circulating Supply */}
-            <td className="px-4 py-2 max-md:hidden">
-              <div className="h-4 w-32 bg-gray-200 rounded"></div>
-            </td>
-          </tr>
-        ))}
-      </tbody>
+      <div className="flex flex-col md:items-center justify-center w-6/6 md:mt-1 overflow-x-scroll">
+        <table className="md:w-11/12 overflow-x-auto rounded-sm">
+          <TableHeader />
+          <tbody>
+            {[...Array(10)].map((_, index) => (
+              <tr key={index + 1} className="hover:bg-gray-50">
+                <td className="px-4 py-2 border-b text-start">
+                  <div className="h-4 w-20 bg-gray-200 rounded animate-pulse inline-block"></div>
+                </td>
+                <td className="px-4 py-2 border-b font-medium text-start">
+                  <div className="h-4 w-20 bg-gray-200 rounded animate-pulse inline-block"></div>
+                </td>
+                <td className="px-4 py-2 border-b text-right">
+                  <div className="h-4 w-20 bg-gray-200 rounded animate-pulse inline-block"></div>
+                </td>
+                {/* Show 24h% on mobile, 7d% on desktop */}
+                <td className={"px-4 py-2 border-b text-right md:hidden"}>
+                  <div className="h-4 w-20 bg-gray-200 rounded animate-pulse inline-block"></div>
+                </td>
+                <td className={"px-4 py-2 border-b text-right max-md:hidden"}>
+                  <div className="h-4 w-20 bg-gray-200 rounded animate-pulse inline-block"></div>
+                </td>
+                {/* Hide these columns on mobile */}
+                <td className="px-4 py-2 border-b text-right max-md:hidden">
+                  <div className="h-4 w-20 bg-gray-200 rounded animate-pulse inline-block"></div>
+                </td>
+                <td className="px-4 py-2 border-b text-right max-md:hidden">
+                  <div className="h-4 w-20 bg-gray-200 rounded animate-pulse inline-block"></div>
+                </td>
+                <td className="px-4 py-2 border-b text-right max-md:hidden inline-block">
+                  {" "}
+                  <div className="h-4 w-20 bg-gray-200 rounded animate-pulse inline-block"></div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   }
   return (
