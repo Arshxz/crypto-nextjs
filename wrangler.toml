@@ -1,2 +1,9 @@
-compatibility_flags = [ "nodejs_compat" ]
+name = "crypto-next"
 compatibility_date = "2023-07-13"
+compatibility_flags = ["nodejs_compat"]
+
+# Points to the output directory created by next-on-pages
+[build]
+command = "npm run pages:build"
+upload_format = "modules"
+dir = ".vercel/output"
