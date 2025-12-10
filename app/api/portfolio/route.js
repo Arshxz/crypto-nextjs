@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 export async function GET() {
   try {
     const API_KEY = process.env.CMC_API_KEY;

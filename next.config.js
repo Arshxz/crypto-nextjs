@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {},
+  experimental: {
+    serverComponentsExternalPackages: ["async_hooks"],
+  },
 };
 
 export default nextConfig;
